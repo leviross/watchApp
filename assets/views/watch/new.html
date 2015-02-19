@@ -6,7 +6,7 @@
      <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="no-padding">
         <span class="title">Your Watch Pics</span>
-        <div class="button" ng-file-select ng-model="files" ng-multiple="multiple">Select File</div>
+
       </div>
       Click on thumbnails to enlarge<br>
       <img src="/images/panerai3.jpg">
@@ -31,39 +31,59 @@
             <tr>
               <td>New or Used</td>
               <td colspan="3">
-                <label >
-                  <input ng-model="used" type="radio" name="" value="false" required/> New
+                <label>
+                  <input ng-model="used" type="radio" name="" value="false" /> New
                 </label>
-                <label >
-                  <input ng-model="used" type="radio" name="" value="true" required/> Used
+                <label>
+                  <input ng-model="used" type="radio" name="" value="true" /> Used
                 </label>
               </td>
             </tr>
             <tr>
               <td>Watch Brand</td>
               <td>
-                <input ng-model="brand" type="text" name="" class="form-control" required/>
+                <input ng-model="brand" type="text" name="" class="form-control" />
               </td>
             </tr>
             <tr>
               <td>Model Number</td>
               <td>
-                <input ng-model="modelNum" type="text" name="" class="form-control" required/>
+                <input ng-model="modelNum" type="text" name="" class="form-control" />
               </td>
             </tr>
             <tr>
               <td>Model Name</td>
               <td>
-                <input ng-model="name" type="text" name="" class="form-control" required/>
+                <input ng-model="name" type="text" name="" class="form-control" />
               </td>
             </tr>
             <tr>
               <td>Price</td>
               <td>
-                <input ng-model="price" type="text" name="" class="form-control" required/>
+                <input ng-model="price" type="text" name="" class="form-control" />
               </td>
             </tr>
+            <tr>
+              <td>Upload Pics</td>
+              <td>
+                <input fileread="image_file1" type="file" name="" ng-file-select ng-multiple="true" class="form-control" resetOnClick="true" multiple="true" required/>
+                <!-- Trying to find a way to upload multiple images -->
+                <!-- <div href="#" class="upload_button"  ng-multiple="true" title="upload" resetOnClick="true" ng-model="files">Upload</div> -->
 
+              </td>
+            </tr>
+            <tr>
+              <td>Upload Pics</td>
+              <td>
+                <input fileread="image_file2" type="file" id="input" name="" ng-multiple="true" class="form-control" multiple="true"/>
+              </td>
+            </tr>
+            <tr>
+              <td>Upload Pics</td>
+              <td>
+                <input fileread="image_file3" type="file" id="input" name="" ng-multiple="true" class="form-control" multiple="true"/>
+              </td>
+            </tr>
             <tr>
               <td>Description</td>
               <td colspan="3">

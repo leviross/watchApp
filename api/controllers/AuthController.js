@@ -26,7 +26,6 @@ module.exports = {
                     }
                 })
             }else{
-                //// WHY CANT I FIND USER ON LOGIN??? ITS ALWAYS HITTING THIS ELSE
                 res.send({
                     result:false,
                     error:'User not found. Please signup.'

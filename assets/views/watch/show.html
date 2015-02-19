@@ -2,10 +2,13 @@
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12">
       <div class="col-lg-12 col-md-12 col-sm-12">
-        <a href=""><img src="/images/detail1-s.jpg" alt=""></a>
-        <a href=""><img src="/images/detail2-s.jpg" alt=""></a>
-        <a href=""><img src="/images/detail3-s.jpg" alt=""></a>
-        <a href=""><img src="/images/detail1-s.jpg" alt=""></a>
+
+          <!-- <cl-image public-id="{{watch.image_url}}" class="thumbnail inline" angle="20" format="jpg">
+          <cl-transformation height="150" width="150" crop="fill" gravity="north" effect="sepia" radius="20"/>
+          </cl-image> -->
+          <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_250,w_250,c_fill/{{watch.image_url}}.jpg"></img>
+
+
       </div>
 
     </div>
@@ -15,22 +18,22 @@
     <!-- Product Detail -->
     <div class="col-lg-6 col-md-6 col-sm-12">
       <div class="col-lg-12 col-sm-12">
-        <span class="title">Brand: IWC</span>
+        <span class="title">Brand: <strong>{{watch.brand}}</strong></span>
       </div>
       <div class="col-lg-12 col-sm-12 hero-feature">
         <!-- <div class="sp-wrap"> MOVED UP TO LEFT SIDE OF PAGE-->
 
-        <h4>Model Name: Portofino Chrono</h4>
-        <hr/>
-        <h4>New or Used</h4>
-        <hr/>
-        <h4>Model Number: IW391007</h4>
-        <hr/>
-        <h4>Owner Name: </h4>
-        <hr/>
+        <h4 class="showStyle">Model Name:  <strong>{{watch.name}}</strong></h4>
+
+        <h4 class="showStyle">New or Used:  <strong>{{watch.used}}</strong></h4>
+
+        <h4 class="showStyle">Model Number: <strong>{{watch.modelNum}}</strong></h4>
+
+        <h4 class="showStyle">Owner Name: <strong>{{watch.owner.firstName}}</strong></h4>
+
         Description of your personal watch goes here, it is optional, but you can definitely place one here and explain how special your watch really is to your potential buyer! The more you explain, the quicker it will sell.
-        <hr/>
-        <h3>Price: $428.96</h3>
+
+        <h4 class="showStyle">Price: <strong>${{watch.price}}</strong></h4>
         <!-- <div class="input-qty-detail">
           <input type="text" class="form-control input-qty text-center" value="1">
 

@@ -30,8 +30,8 @@ module.exports = {
       required:true
     },
     image_url:{
-      type:'string'
-      //required:true
+      type:'array',
+      required:true
     },
 
     //// associations

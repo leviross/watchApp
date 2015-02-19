@@ -1,10 +1,12 @@
 watchApp.controller('AuthModalCtrl',['$scope','$http','$modalInstance','UserService','AlertService',function($scope,$http,$modalInstance,UserService,AlertService){
 
-    $scope.loginData={email:'',password:''};
+    $scope.loginData={email: $scope.email,password:$scope.password};
     $scope.signupData={};
 
     $scope.login = function(){
-        UserService.login($scope.loginData.email,$scope.loginData.password,
+        // alert($scope.email)
+        // alert($scope.password)
+        UserService.login($scope.email,$scope.password,
             function(err,data){
                 if(err){
                     //server error
@@ -39,6 +41,7 @@ watchApp.controller('AuthModalCtrl',['$scope','$http','$modalInstance','UserServ
         $http.post('/api/user',signupData)
         .success(function(data){
             AlertService.add('success','You have been signed up.');
+            UserService.currentUser=data;
             $modalInstance.close();
         })
         .error(function(err){
