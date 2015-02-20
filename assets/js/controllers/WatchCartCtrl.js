@@ -1,7 +1,6 @@
-watchApp.controller('WatchShowCtrl',['$scope','$http','$routeParams','$location','$modal',function($scope,$http,$routeParams,$location,$modal){
+watchApp.controller('WatchCartCtrl',['$scope','$http','$routeParams','$location','$modal',function($scope,$http,$routeParams,$location,$modal){
 
     var watchId = $routeParams.id;
-
     $scope.watches = [];
 
     $http.get('/api/watch/'+watchId)
@@ -11,13 +10,13 @@ watchApp.controller('WatchShowCtrl',['$scope','$http','$routeParams','$location'
 
         if($scope.watch.used){
           $scope.watch.used="Pre-Owned";
-          }else{
-              $scope.watch.used="New";
-          }
+        }else{
+          $scope.watch.used="New";
+        }
 
         }).error(function(err){
             //$location.path('/');
             alert("That watch could not be found.");
-        });
+            });
 
 }]);

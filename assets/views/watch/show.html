@@ -1,16 +1,14 @@
 <div class="container main-container">
   <div class="row">
+
     <div class="col-lg-6 col-md-6 col-sm-12">
       <div class="col-lg-12 col-md-12 col-sm-12">
-
           <!-- <cl-image public-id="{{watch.image_url}}" class="thumbnail inline" angle="20" format="jpg">
           <cl-transformation height="150" width="150" crop="fill" gravity="north" effect="sepia" radius="20"/>
-          </cl-image> -->
-          <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_250,w_250,c_fill/{{watch.image_url}}.jpg"></img>
-
-
+        </cl-image> -->
+        <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_450,w_550,c_fill/{{watch.image_url[0]}}.jpg"></img><hr/>
+        <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_450,w_550,c_fill/{{watch.image_url[1]}}.jpg"></img>
       </div>
-
     </div>
 
     <div class="clearfix visible-sm"></div>
@@ -38,9 +36,10 @@
           <input type="text" class="form-control input-qty text-center" value="1">
 
         </div> -->
-        <button class="btn btn-primary pull-left">add to cart</button>
+        <a href="/watch/cart/{{watch.id}}"><button class="btn btn-primary pull-left">add to cart</button></a>
         <br/>
         <hr/>
+        <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_450,w_550,c_fill/{{watch.image_url[2]}}.jpg"></img>
         <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
           <a class="addthis_button_preferred_1"></a>
           <a class="addthis_button_preferred_2"></a>

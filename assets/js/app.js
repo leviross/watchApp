@@ -19,6 +19,14 @@ watchApp.config(['$routeProvider','$locationProvider',function($routeProvider,$l
         templateUrl:'/views/watch/show.html',
         controller:'WatchShowCtrl'
     })
+    .when('/watch/cart/:id',{
+        templateUrl:'/views/watch/cart.html',
+        controller:'WatchCartCtrl'
+    })
+    .when('/watch/checkout/:id',{
+        templateUrl:'/views/watch/checkout.html',
+        controller:'WatchCheckoutCtrl'
+    })
     .when('/about',{
         templateUrl:'/views/about.html',
         controller:'StaticCtrl'

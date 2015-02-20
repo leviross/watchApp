@@ -31,16 +31,16 @@
       <div class="row text-center">
         <div class="col-lg-12 col-md-12 hero-feature">
           <div class="thumbnail">
-            <a href="detail.html" class="link-p first-p">
-              <img src="images/product-1.jpg" alt="">
+            <a href="/watch/54e6a5f9a379990a8857bd71" class="link-p first-p">
+              <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/ywurw2iramhhptvd9t72.jpg" alt="">
             </a>
             <div class="caption prod-caption">
-              <h4><a href="detail.html">Daily Deal</a></h4>
-              <p>Check out this pre-owned Panerai, its on a special price!</p>
+              <h4><a href="/watch/54e6a5f9a379990a8857bd71">Daily Deal - Citizen - Eco-Drive Blue Angels World</a></h4>
+              <p>Check out this special priced Citizen Eco-Drive, its a must buy!</p>
               <p>
                 <div class="btn-group">
-                  <a href="#" class="btn btn-default">$ 928.96</a>
-                  <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
+                  <a href="#" class="btn btn-default">$295</a>
+                  <a href="/watch/cart/54e6a5f9a379990a8857bd71" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
                 </div>
               </p>
             </div>
@@ -81,16 +81,16 @@
         </div>
         <div class="hero-feature">
           <div class="thumbnail text-center">
-            <a href="detail.html" class="link-p">
-              <img src="images/blue-watch.jpg" alt="">
+            <a href="/watch/54e68502a379990a8857bd6b" class="link-p">
+              <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/osxyovaqmkx70z3jbyhw.jpg" alt="">
             </a>
             <div class="caption prod-caption">
-              <h4><a href="detail.html">Penn State College T-Shirt</a></h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
+              <h4><a href="/watch/54e68502a379990a8857bd6b">Girard Perregaux - World Timer LA Edition</a></h4>
+              <p>Model #: 49850-11-252D-BA6A</p>
               <p>
                 <div class="btn-group">
-                  <a href="#" class="btn btn-default">$ 528.96</a>
-                  <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
+                  <a href="#" class="btn btn-default">$5,995</a>
+                  <a href="/watch/cart/54e68502a379990a8857bd6b" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
                 </div>
               </p>
             </div>
@@ -98,16 +98,16 @@
         </div>
         <div class="hero-feature hidden-sm">
           <div class="thumbnail text-center">
-            <a href="detail.html" class="link-p">
-              <img src="images/oris-chrono.jpeg" alt="">
+            <a href="/watch/54e6bba110f19a9eb808fc95" class="link-p">
+              <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/ljced0k3liw2fodlxo3k.jpg" alt="">
             </a>
             <div class="caption prod-caption">
-              <h4><a href="detail.html">Ohio State College T-Shirt</a></h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
+              <h4><a href="/watch/54e6bba110f19a9eb808fc95">Omega - De Ville Hour Vision</a></h4>
+              <p>Omega is one of the most followed brands in the world, this is a very special piece.</p>
               <p>
                 <div class="btn-group">
-                  <a href="#" class="btn btn-default">$ 924.25</a>
-                  <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
+                  <a href="#" class="btn btn-default">$5,145</a>
+                  <a href="/watch/cart/54e6bba110f19a9eb808fc95" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
                 </div>
               </p>
             </div>
@@ -127,8 +127,8 @@
       </div>
       <div class="col-lg-4 col-sm-4 hero-feature text-center" ng-repeat="watch in watches">
         <div class="thumbnail">
-          <a href="detail.html" class="link-p">
-            <img src="images/product-2.jpg" alt="">
+          <a href="/watch/{{watch.id}}" class="link-p">
+            <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/{{watch.image_url[0]}}.jpg" alt="">
           </a>
           <div class="caption prod-caption">
             <h4><a href="detail.html">{{watch.brand}} - {{watch.name}}</a></h4>
@@ -136,7 +136,7 @@
             <p>
               <div class="btn-group">
                 <a href="#" class="btn btn-default">${{watch.price}}</a>
-                <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
+                <a href="/watch/cart/{{watch.id}}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
               </div>
             </p>
           </div>

@@ -22,7 +22,6 @@ watchApp.controller('WatchNewCtrl',['$scope','$http','$location',function($scope
     $scope.createWatch = function(){
         $scope.alert=false;
 
-
         var watchData = {
             modelNum:$scope.modelNum,
             name:$scope.name,
@@ -32,31 +31,15 @@ watchApp.controller('WatchNewCtrl',['$scope','$http','$location',function($scope
             image_file1:$scope.image_file1,
             image_file2:$scope.image_file2,
             image_file3:$scope.image_file3
-            //owner:$scope.session.user.id
         };
-
-        // var request = {
-        //     method: 'POST',
-        //     url: '/watch/new',
-        //     headers: {
-        //         'Content-Type': 'multipart/form-data'
-        //     },
-        //     data: watchData,
-        //     transformRequest: formDataObject
-        // }
 
         console.log(watchData);
 
-        // $http(request).success(function(data){
-            $http.post('/watch/new',watchData).success(function(data){
+        $http.post('/watch/new',watchData).success(function(data){
             //$scope.alert="Your post has been created.";
             alert("Your watch has been created.");
             console.log(data);
-            $location.path('/');
-            // $scope.modelNum="";
-            // $scope.name="";
-            // $scope.brand="";
-            // $scope.price="";
+            $location.path('/watch/'+data.id);
         }).error(function(err){
             console.log(err);
             alert(err);

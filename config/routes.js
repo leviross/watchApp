@@ -41,6 +41,7 @@ module.exports.routes = {
   'post /watch/new': "WatchController.create",
 
 
+
   'get *':{
     controller:'PagesController',
     action:'index',
