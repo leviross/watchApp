@@ -19,6 +19,12 @@ watchApp.directive("fileread", [function () {
 
 
 watchApp.controller('WatchNewCtrl',['$scope','$http','$location',function($scope,$http,$location){
+
+    $scope.UserService = UserService;
+    $scope.$watchCollection('UserService',function(){
+        $scope.currentUser=UserService.currentUser;
+    });
+
     $scope.createWatch = function(){
         $scope.alert=false;
 

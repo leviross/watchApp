@@ -67,6 +67,9 @@
 
 
     }
+    // cart:function(req,res){
+    //   res.view('watch/cart');
+    // }
 
 };
 
