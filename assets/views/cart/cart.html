@@ -69,7 +69,7 @@
           <td class="price">$ {{watch.price}}</td>
           <td>$ {{watch.price}}</td>
           <td class="text-center">
-            <a href="#" class="remove_cart" rel="2">
+            <a ng-click="removeItem($index)" href="#" class="remove_cart" rel="2">
               <i class="fa fa-trash-o"></i>
             </a>
           </td>
@@ -77,7 +77,7 @@
 
         <tr>
           <td colspan="6" align="right">Total</td>
-          <td class="total" colspan="2"><b>$ 163.47</b>
+          <td class="total" colspan="2"><b>${{total()}}</b>
           </td>
         </tr>
       </tbody>

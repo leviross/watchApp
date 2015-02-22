@@ -1,4 +1,4 @@
-watchApp.controller('WatchCartCtrl',['$scope','$rootScope','$http','$routeParams','$location','$modal','CartService',function($scope,$rootScope,$http,$routeParams,$location,$modal,CartService){
+watchApp.controller('WatchCartCtrl',['$scope','$routeParams','$location','CartService',function($scope,$routeParams,$location,CartService){
 
 
     // $scope.UserService = UserService;
@@ -11,23 +11,20 @@ watchApp.controller('WatchCartCtrl',['$scope','$rootScope','$http','$routeParams
 
     $scope.watches = CartService.getCart();
 
-    //var watchId = $routeParams.id;
+    $scope.total = function() {
+        var total = 0;
+        angular.forEach($scope.watches, function(item){
+            total += item.price;
+        });
+        return total;
+    }
+
+    $scope.removeItem = function(idx){
+        alert("clicked on remove");
+        CartService.removeFromCart(idx);
+    }
 
 
-    // $http.get('/api/watch/'+watchId)
-    // .success(function(data){
-    //     console.log(data);
-    //     $scope.watch=data;
 
-    //     if($scope.watch.used){
-    //       $scope.watch.used="Pre-Owned";
-    //     }else{
-    //       $scope.watch.used="New";
-    //     }
-
-    //     }).error(function(err){
-    //         //$location.path('/');
-    //         alert("That watch could not be found.");
-    //         });
 
 }]);
