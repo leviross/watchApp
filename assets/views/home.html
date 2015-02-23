@@ -4,13 +4,13 @@
 
     <!-- Slider NO CLUE WHY THE SLIDER ISNT WORKING, HAD TO COMMENT OUT OTHER PICS-->
     <div class="col-lg-9 col-md-12">
-      <div class="slider">
+      <!-- <div class="slider">
         <ul class="bxslider">
           <li>
             <a href="index.html">
               <img class="bxslider slider" src="images/GP2.jpg" alt=""/>
             </a>
-          </li>
+          </li>  -->
        <!--    <li>
             <a href="index.html">
               <img src="images/banner_slider-2.jpg" alt=""/>
@@ -20,9 +20,24 @@
             <a href="index.html">
               <img src="images/banner_slider-1.jpg" alt=""/>
             </a>
-          </li> -->
+          </li>
         </ul>
       </div>
+    </div> --> <!-- TRYING A NEW CAROUSEL FROM BOOTSTRAP, NOT WORKING PERFECTLY -->
+    <div>
+      <div ng-controller="CarouselCtrl">
+        <div style="height:305px;">
+          <carousel interval="myInterval" disable-animation="true">
+            <slide ng-repeat="slide in slides" active="slide.active">
+              <img ng-src="{{slide.image}}" style="margin:auto;">
+              <div class="carousel-caption">
+                <h1 class="carousel-text">{{slide.text}}</h1>
+              </div>
+            </slide>
+          </carousel>
+        </div>
+      </div>
+    </div>
     </div>
     <!-- End Slider -->
 
@@ -40,7 +55,7 @@
               <p>
                 <div class="btn-group">
                   <a href="#" class="btn btn-default">$295</a>
-                  <a href="/watch/cart/54e6a5f9a379990a8857bd71" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
+                  <a href="/watch/54e6a5f9a379990a8857bd71" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
                 </div>
               </p>
             </div>
@@ -90,7 +105,7 @@
               <p>
                 <div class="btn-group">
                   <a href="#" class="btn btn-default">$5,995</a>
-                  <a href="/watch/cart/54e68502a379990a8857bd6b" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
+                  <a href="/watch/54e68502a379990a8857bd6b" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
                 </div>
               </p>
             </div>
@@ -107,7 +122,7 @@
               <p>
                 <div class="btn-group">
                   <a href="#" class="btn btn-default">$5,145</a>
-                  <a href="/watch/cart/54e6bba110f19a9eb808fc95" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
+                  <a href="/watch/54e6bba110f19a9eb808fc95" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
                 </div>
               </p>
             </div>
@@ -136,7 +151,7 @@
             <p>
               <div class="btn-group">
                 <a href="#" class="btn btn-default">${{watch.price}}</a>
-                <a href="/watch/cart/{{watch.id}}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
+                <a href="/watch/{{watch.id}}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
               </div>
             </p>
           </div>
@@ -146,7 +161,10 @@
     <!-- End Featured -->
 
     <div class="clearfix visible-sm"></div>
-
-
   </div>
+
 </div>
+</div>
+
+
+

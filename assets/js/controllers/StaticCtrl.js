@@ -1,3 +1,6 @@
 watchApp.controller('StaticCtrl',[function(){
-  // body...
+
+
+
+
 }]);

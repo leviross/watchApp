@@ -21,6 +21,12 @@ watchApp.factory('UserService',['$http',function($http){
             $http.delete('/api/auth')
             .success(function(data){
                 self.currentUser=false;
+                swal({
+                    title: "Sorry to see you go.",
+                    text: "We hope you had fun, see you soon.",
+                    type: "warning",
+                    timer: 3000
+                  });
                 callback(null,data);
             }).error(function(err){
                 callback(err);
@@ -31,6 +37,7 @@ watchApp.factory('UserService',['$http',function($http){
             $http.get('/api/auth')
             .success(function(data){
                 if(data && data.user){
+                    //console.log("UserService check function returns: ",data.user);
                     self.currentUser=data.user;
                 }else{
                     self.currentUser=false;
@@ -40,5 +47,6 @@ watchApp.factory('UserService',['$http',function($http){
                 callback(err);
             })
         }
+
     }
 }])

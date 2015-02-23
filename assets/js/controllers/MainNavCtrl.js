@@ -6,6 +6,17 @@ watchApp.controller('MainNavCtrl',['$scope','$location','$modal','UserService',f
         $scope.currentUser=UserService.currentUser;
     });
 
+    // $scope.watches = CartService.getCart();
+    // For some reason, when I did this CartService functionality on the MainNavCtrl, certain css files
+    // werent being loaded on index.ejs and the drop down cart wasnt working. Moving on for now...
+    // $scope.total = function() {
+    //     var total = 0;
+    //     angular.forEach($scope.watches, function(item){
+    //         total += item.price;
+    //     });
+    //     return total;
+    // }
+
     $scope.isActive = function(url){
         return url == $location.path();
     };

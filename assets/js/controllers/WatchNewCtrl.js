@@ -18,7 +18,7 @@ watchApp.directive("fileread", [function () {
 }]);
 
 
-watchApp.controller('WatchNewCtrl',['$scope','$http','$location',function($scope,$http,$location){
+watchApp.controller('WatchNewCtrl',['$scope','$http','$location','UserService',function($scope,$http,$location,UserService){
 
     $scope.UserService = UserService;
     $scope.$watchCollection('UserService',function(){
@@ -43,7 +43,12 @@ watchApp.controller('WatchNewCtrl',['$scope','$http','$location',function($scope
 
         $http.post('/watch/new',watchData).success(function(data){
             //$scope.alert="Your post has been created.";
-            alert("Your watch has been created.");
+            swal({
+                title: "Your watch has been added!",
+                text: "Here is what your watch page looks like",
+                type: "success",
+                timer: 2500
+              });
             console.log(data);
             $location.path('/watch/'+data.id);
         }).error(function(err){

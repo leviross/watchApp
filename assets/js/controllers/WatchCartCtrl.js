@@ -1,12 +1,13 @@
-watchApp.controller('WatchCartCtrl',['$scope','$routeParams','$location','CartService',function($scope,$routeParams,$location,CartService){
+watchApp.controller('WatchCartCtrl',['$scope','$routeParams','$location','CartService','UserService',function($scope,$routeParams,$location,CartService,UserService){
 
 
-    // $scope.UserService = UserService;
-    // $scope.$watchCollection('UserService',function(){
-    //     $scope.currentUser=UserService.currentUser;
-    // });
+    $scope.UserService = UserService;
+    $scope.$watchCollection('UserService',function(){
+        $scope.currentUser=UserService.currentUser;
+        //console.log("Watching UserService");
+    });
 
-
+    //TRYIN TO FIGURE OUT A WAY TO SAVE THE CART ON PAGE RELOAD, OR SAVE CART TO USER ACCOUNT
 
 
     $scope.watches = CartService.getCart();
@@ -20,7 +21,12 @@ watchApp.controller('WatchCartCtrl',['$scope','$routeParams','$location','CartSe
     }
 
     $scope.removeItem = function(idx){
-        alert("clicked on remove");
+        swal({
+            title: "Removed",
+            text: "That watch has been removed from your cart",
+            type: "warning",
+            timer: 2500
+          });
         CartService.removeFromCart(idx);
     }
 

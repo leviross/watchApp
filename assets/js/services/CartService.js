@@ -1,5 +1,9 @@
-watchApp.factory('CartService',[function(){
+watchApp.factory('CartService',['UserService',function(UserService){
 
+
+    // UserService.check(function(err,data){
+    //     console.log('check',err,data);
+    // });
 
     var userCart=[];
 

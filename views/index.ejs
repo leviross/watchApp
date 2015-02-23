@@ -1,17 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Home - Mimity</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/jquery.bxslider.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-</head>
-<body> -->
   <div ng-app="WatchApp">
     <header>
       <div class="container">
@@ -21,14 +7,14 @@
           <div class="col-lg-4 col-md-3 hidden-sm hidden-xs">
             <div class="well logo">
               <a href="/">
-                Royal <span>Watch Shop</span>
+                Clock <span>Swap</span>
               </a>
-              <div>Best market for certified pre-owned watches.</div>
+              <div>Best market for certified pre-owned watches</div>
             </div>
           </div>
           <!-- End Logo -->
 
-          <!-- Search Form -->
+          <!-- Search Form COMMENTED OUT, CUZ DIDNT HAVE TIME TO MAKE OPERATIONAL-->
           <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
             <div class="well">
               <form action="">
@@ -43,7 +29,7 @@
           </div>
           <!-- End Search Form -->
 
-          <!-- Shopping Cart List -->
+          <!-- Shopping Cart List COMMENTED OUT, CUZ DIDNT HAVE TIME TO MAKE OPERATIONAL-->
           <div class="col-lg-3 col-md-4 col-sm-5">
             <div class="well">
               <div class="btn-group btn-group-cart">
@@ -52,7 +38,7 @@
                   <span class="pull-left">Shopping Cart: 2 item(s)</span>
                   <span class="pull-right"><i class="fa fa-caret-down"></i></span>
                 </button>
-                <ul class="dropdown-menu cart-content" role="menu">
+                <ul class="dropdown-menu cart-content" role="menu" ng-repeat="watch in watches">
                   <li>
                     <a href="detail.html">
                       <b>Penn State College T-Shirt</b>
@@ -66,7 +52,7 @@
                     </a>
                   </li>
                   <li class="divider"></li>
-                  <li><a href="cart.html">Total: $957.92</a></li>
+                  <li><a href="cart.html">Total: ${{total()}}</a></li>
                 </ul>
               </div>
             </div>
@@ -74,7 +60,7 @@
           <!-- End Shopping Cart List -->
         </div>
       </div>
-    </header>
+  </header>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse" role="navigation" ng-controller="MainNavCtrl">
@@ -92,17 +78,17 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
-            <li><a href="catalogue.html">Catalogue</a></li>
-            <li><a href="#">Shopping Cart</a></li>
-            <li><a href="checkout.html">Checkout</a></li>
+            <!-- <li><a href="catalogue.html">Catalogue</a></li> -->
+            <li><a href="/cart">Shopping Cart</a></li>
+            <li><a href="/checkout">Checkout</a></li>
             <li class="nav-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Pages <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="typography.html">Typography</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="#">Typography</a></li>
               </ul>
             </li>
             <li ng-hide="currentUser"><a href="" ng-click="showSignup()">Signup</a></li>
@@ -135,9 +121,9 @@
             <h4>Information</h4>
             <ul>
               <li><a href="/about">About Us</a></li>
-              <li><a href="typography.html">Policy Privacy</a></li>
-              <li><a href="typography.html">Terms and Conditions</a></li>
-              <li><a href="typography.html">Shipping Methods</a></li>
+              <li><a href="#">Policy Privacy</a></li>
+              <li><a href="#">Terms and Conditions</a></li>
+              <li><a href="#">Shipping Methods</a></li>
             </ul>
           </div>
         </div>
@@ -145,10 +131,10 @@
           <div class="column">
             <h4>Categories</h4>
             <ul>
-              <li><a href="catalogue.html">Cras justo odio</a></li>
-              <li><a href="catalogue.html">Dapibus ac facilisis in</a></li>
-              <li><a href="catalogue.html">Morbi leo risus</a></li>
-              <li><a href="catalogue.html">Porta ac consectetur ac</a></li>
+              <li><a href="#">Cras justo odio</a></li>
+              <li><a href="#">Dapibus ac facilisis in</a></li>
+              <li><a href="#">Morbi leo risus</a></li>
+              <li><a href="#">Porta ac consectetur ac</a></li>
             </ul>
           </div>
         </div>
@@ -156,10 +142,10 @@
           <div class="column">
             <h4>Customer Service</h4>
             <ul>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="#">YM: erwin_heldy</a></li>
-              <li><a href="#">Telp: 087825376xxx</a></li>
-              <li><a href="#">Email: erwin.heldy@gmail.com</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+              <li><a href="#">ClockSwap.com</a></li>
+              <li><a href="#">Call Us: 800-721-0000</a></li>
+              <li><a href="#">Email: contact@clockswap.com</a></li>
             </ul>
           </div>
         </div>
@@ -176,7 +162,7 @@
         </div>
       </div>
       <div class="navbar-inverse text-center copyright">
-        Copyright &copy; 2013 Mimity All right reserved
+        Copyright &copy; 2015 ClockSwap.com All right reserved
       </div>
     </footer>
 
@@ -186,11 +172,3 @@
     </a>
 
   </div>
-<!--
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.bxslider.min.js"></script>
-    <script src="js/jquery.blImageCenter.js"></script>
-    <script src="js/mimity.js"></script>
-</body>
-</html> -->

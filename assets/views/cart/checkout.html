@@ -1,4 +1,4 @@
-<div class="container main-container">
+  <div class="container main-container">
   <div class="row">
    <div class="col-lg-3 col-md-3 col-sm-12">
 
@@ -8,16 +8,16 @@
         <span class="title">Your Selection</span>
       </div>
       <div class="thumbnail col-lg-12 col-md-12 col-sm-6 text-center">
-        <a href="/watch/54e6bba110f19a9eb808fc95" class="link-p">
-          <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/ljced0k3liw2fodlxo3k.jpg" alt="">
+        <a href="/watch/54e68782a379990a8857bd6d" class="link-p">
+          <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/nqnomfcno11qdzu5xfpy.jpg" alt="">
         </a>
         <div class="caption prod-caption">
-         <h4><a href="/watch/54e6bba110f19a9eb808fc95">Omega - De Ville Hour Vision</a></h4>
-         <p>The De Ville was born in 1960 as OMEGA’s elegant dress watch. Aside from the aesthetics, the model was also self-winding and water-resistant. There are many variations of this popular OMEGA watch, which was the most varied of all OMEGA lines by 1967.</p>
+         <h4><a href="/watch/54e68782a379990a8857bd6d">Hamilton - Khaki Field Pioneer Auto Chrono</a></h4>
+         <p>The Hamilton Watch Company has manufactured and marketed timepieces since it was incorporated in 1892 and produced its first watch, the 936, in 1893. The company went on to market pocket watches and wristwatches; to subsequently become a diversified conglomerate.</p>
          <p>
           <div class="btn-group">
-           <a href="#" class="btn btn-default">${{watch.price}}</a>
-           <a href="/watch/cart/54e6bba110f19a9eb808fc95" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
+           <a href="#" class="btn btn-default">$1,175</a>
+           <a href="/watch/54e68782a379990a8857bd6d" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> View</a>
          </div>
        </p>
      </div>
@@ -61,7 +61,7 @@
       <tr>
         <td>Address</td>
         <td colspan="3">
-          <textarea name="" class="form-control"></textarea>
+          <input type="text" name="" class="form-control">
         </td>
       </tr>
       <tr>
@@ -102,7 +102,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr ng-repeat="watch in watches">
       <td class="hidden-xs">
         <a href="/watch/{{watch.id}}">
           <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_100,w_100,c_fill/{{watch.image_url[0]}}.jpg" alt="Age Of Wisdom Tan Graphic Tee" title=""/>
@@ -122,7 +122,7 @@
       <td class="price">$ {{watch.price}}</td>
       <td>$ {{watch.price}}</td>
       <td class="text-center">
-        <a href="#" class="remove_cart" rel="2">
+        <a ng-click="removeItem($index)" href="#" class="remove_cart" rel="2">
           <i class="fa fa-trash-o"></i>
         </a>
       </td>
@@ -130,7 +130,7 @@
 
     <tr>
       <td colspan="6" align="right">Total</td>
-      <td class="total" colspan="2"><b>$ 163.47</b>
+      <td class="total" colspan="2"><b>${{total()}}</b>
       </td>
     </tr>
   </tbody>

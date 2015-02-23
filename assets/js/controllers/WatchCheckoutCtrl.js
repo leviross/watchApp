@@ -1,21 +1,25 @@
-watchApp.controller('WatchCheckoutCtrl',['$scope','$http','$routeParams',function($scope,$http,$routeParams){
+watchApp.controller('WatchCheckoutCtrl',['$scope','$http','$routeParams','CartService','UserService',function($scope,$http,$routeParams,CartService,UserService){
 
+
+    $scope.watches = CartService.getCart();
 
     $scope.UserService = UserService;
     $scope.$watchCollection('UserService',function(){
         $scope.currentUser=UserService.currentUser;
     });
 
-    var watchId=$routeParams.id;
-
-    $http.get('/api/watch/'+watchId)
-    .success(function(data){
-        console.log(data);
-        $scope.watch=data;
-        }).error(function(){
-            console.log(err);
-            alert("That watch can't be found for some reason, try again.");
+    $scope.total = function() {
+        var total = 0;
+        angular.forEach($scope.watches, function(item){
+            total += item.price;
         });
+        return total;
+    }
+
+    $scope.removeItem = function(idx){
+        alert("clicked on remove");
+        CartService.removeFromCart(idx);
+    }
 
 
 }]);

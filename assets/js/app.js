@@ -23,8 +23,8 @@ watchApp.config(['$routeProvider','$locationProvider',function($routeProvider,$l
         templateUrl:'/views/cart/cart.html',
         controller:'WatchCartCtrl'
     })
-    .when('/watch/checkout/:id',{
-        templateUrl:'/views/watch/checkout.html',
+    .when('/cart/checkout',{
+        templateUrl:'/views/cart/checkout.html',
         controller:'WatchCheckoutCtrl'
     })
     .when('/about',{
@@ -41,4 +41,13 @@ watchApp.run(['UserService',function(UserService){
         console.log('check',err,data);
     });
 
+    //IF THERE IS A USER LOGGED IN, AND THAT USER HAS A CART WITH A MIN LENGTH OF 1, THEN userCart ARRAY
+    // IS HIS SAVED ARRAY FROM BEFORE, ELSE- userCart IS A NEW EMPTY ARRAY
+
 }]);
+
+
+
+
+
+

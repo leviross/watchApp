@@ -24,7 +24,12 @@ watchApp.controller('WatchShowCtrl',['$scope','$rootScope','$http','$routeParams
 
     // $scope.CartService = CartService;
     $scope.addWatchToCart = function(currObj){
-        alert("clicked on Add to Cart!");
+        swal({
+            title: "Added!",
+            text: "Here is your cart",
+            type: "success",
+            timer: 2500
+          });
         CartService.addToCart(currObj);
         $location.path('/cart');
     }

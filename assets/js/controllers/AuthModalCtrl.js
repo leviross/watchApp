@@ -13,6 +13,12 @@ watchApp.controller('AuthModalCtrl',['$scope','$http','$modalInstance','UserServ
                     alert(err);
                 }else if(data.user){
                     //successful login
+                    swal({
+                        title: "Welcome back",
+                        text: "Have fun shopping the coolest watch market! ",
+                        type: "success",
+                        timer: 2000
+                      });
                     $modalInstance.close();
                 }else{
                     //login error (bad user or pass)
@@ -40,7 +46,13 @@ watchApp.controller('AuthModalCtrl',['$scope','$http','$modalInstance','UserServ
 
         $http.post('/api/user',signupData)
         .success(function(data){
-            AlertService.add('success','You have been signed up.');
+            //AlertService.add('success','You have been signed up.');
+            swal({
+                title: "Welcome to ClockSwap!",
+                text: "Sell your own watch collection to a dedicated following ",
+                type: "success",
+                timer: 3000
+              });
             UserService.currentUser=data;
             $modalInstance.close();
         })
