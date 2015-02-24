@@ -1,5 +1,5 @@
 /*
-*{
+*{ This was the stock template CSS, it was messing up slider and sweetalert
 	-moz-border-radius: 0!important;
 	-webkit-border-radius: 0!important;
 	-ms-border-radius: 0!important;
@@ -190,6 +190,7 @@ h4.showStyle{
 	font-size: 22px;
 	color: #4c7ed3;
 }
+
 footer .column ul{
 	font-size: 13px;
 	list-style: none;

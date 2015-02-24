@@ -17,7 +17,12 @@ watchApp.controller('WatchCheckoutCtrl',['$scope','$http','$routeParams','CartSe
     }
 
     $scope.removeItem = function(idx){
-        alert("clicked on remove");
+        swal({
+            title: "Removed",
+            text: "That watch has been removed from your cart",
+            type: "warning",
+            timer: 2500
+          });
         CartService.removeFromCart(idx);
     }
 

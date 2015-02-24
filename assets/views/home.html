@@ -2,28 +2,8 @@
 <div class="container main-container">
   <div class="row">
 
-    <!-- Slider NO CLUE WHY THE SLIDER ISNT WORKING, HAD TO COMMENT OUT OTHER PICS-->
     <div class="col-lg-9 col-md-12">
-      <!-- <div class="slider">
-        <ul class="bxslider">
-          <li>
-            <a href="index.html">
-              <img class="bxslider slider" src="images/GP2.jpg" alt=""/>
-            </a>
-          </li>  -->
-       <!--    <li>
-            <a href="index.html">
-              <img src="images/banner_slider-2.jpg" alt=""/>
-            </a>
-          </li>
-          <li>
-            <a href="index.html">
-              <img src="images/banner_slider-1.jpg" alt=""/>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div> --> <!-- TRYING A NEW CAROUSEL FROM BOOTSTRAP, NOT WORKING PERFECTLY -->
+<!-- TRYING A NEW CAROUSEL FROM BOOTSTRAP, FINALLY WORKING -->
     <div>
       <div ng-controller="CarouselCtrl">
           <carousel interval="myInterval">
@@ -47,7 +27,7 @@
         <div class="col-lg-12 col-md-12 hero-feature">
           <div class="thumbnail">
             <a href="/watch/54e6a5f9a379990a8857bd71" class="link-p first-p">
-              <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/ywurw2iramhhptvd9t72.jpg" alt="">
+              <img src="https://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/ywurw2iramhhptvd9t72.jpg" alt="">
             </a>
             <div class="caption prod-caption">
               <h4><a href="/watch/54e6a5f9a379990a8857bd71">Daily Deal - Citizen - Eco-Drive Blue Angels World</a></h4>
@@ -72,19 +52,20 @@
       <!-- Categories -->
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="no-padding">
-          <span class="title">CATEGORIES</span>
+          <span class="title">BRANDS</span>
         </div>
         <div class="list-group list-categ">
-          <a href="catalogue.html" class="list-group-item">Rolex</a>
-          <a href="catalogue.html" class="list-group-item">Panerai</a>
-          <a href="catalogue.html" class="list-group-item">Oris</a>
-          <a href="catalogue.html" class="list-group-item">Breitling</a>
-          <a href="catalogue.html" class="list-group-item">Omega</a>
-          <a href="catalogue.html" class="list-group-item">Tissot</a>
-          <a href="catalogue.html" class="list-group-item">Girard-Perregaux</a>
-          <a href="catalogue.html" class="list-group-item">Hamilton</a>
-          <a href="catalogue.html" class="list-group-item">A. Longe</a>
-          <a href="catalogue.html" class="list-group-item">Seiko</a>
+          <button ng-click="clearBrand()" class="btn btn-primary">CLEAR ALL</button>
+          <a href="#" ng-click="showBrand('Rolex')" class="list-group-item">Rolex</a>
+          <a href="#" ng-click="showBrand('Panerai')" class="list-group-item">Panerai</a>
+          <a href="#" ng-click="showBrand('Oris')" class="list-group-item">Oris</a>
+          <a href="#" ng-click="showBrand('Breitling')" class="list-group-item">Breitling</a>
+          <a href="#" ng-click="showBrand('Omega')" class="list-group-item">Omega</a>
+          <a href="#" ng-click="showBrand('Tissot')" class="list-group-item">Tissot</a>
+          <a href="#" ng-click="showBrand('Girard Perregaux')" class="list-group-item">Girard-Perregaux</a>
+          <a href="#" ng-click="showBrand('Hamilton')" class="list-group-item">Hamilton</a>
+          <a href="#" ng-click="showBrand('Seiko')" class="list-group-item">Seiko</a>
+          <a href="#" ng-click="showBrand('Zenith')" class="list-group-item">Zenith</a>
         </div>
       </div>
       <!-- End Categories -->
@@ -97,7 +78,7 @@
         <div class="hero-feature">
           <div class="thumbnail text-center">
             <a href="/watch/54e68502a379990a8857bd6b" class="link-p">
-              <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/osxyovaqmkx70z3jbyhw.jpg" alt="">
+              <img src="https://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/osxyovaqmkx70z3jbyhw.jpg" alt="">
             </a>
             <div class="caption prod-caption">
               <h4><a href="/watch/54e68502a379990a8857bd6b">Girard Perregaux - World Timer LA Edition</a></h4>
@@ -114,7 +95,7 @@
         <div class="hero-feature hidden-sm">
           <div class="thumbnail text-center">
             <a href="/watch/54e6bba110f19a9eb808fc95" class="link-p">
-              <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/ljced0k3liw2fodlxo3k.jpg" alt="">
+              <img src="https://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/ljced0k3liw2fodlxo3k.jpg" alt="">
             </a>
             <div class="caption prod-caption">
               <h4><a href="/watch/54e6bba110f19a9eb808fc95">Omega - De Ville Hour Vision</a></h4>
@@ -143,14 +124,14 @@
       <div class="col-lg-4 col-sm-4 hero-feature text-center" ng-repeat="watch in watches">
         <div class="thumbnail">
           <a href="/watch/{{watch.id}}" class="link-p">
-            <img src="http://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/{{watch.image_url[0]}}.jpg" alt="">
+            <img src="https://res.cloudinary.com/justwyoming-com/image/upload/h_245,w_253,c_fill/{{watch.image_url[0]}}.jpg" alt="">
           </a>
           <div class="caption prod-caption">
             <h4><a href="detail.html">{{watch.brand}} - {{watch.name}}</a></h4>
             <p>Model #: {{watch.modelNum}}</p>
             <p>
               <div class="btn-group">
-                <a href="#" class="btn btn-default">${{watch.price}}</a>
+                <a href="#" class="btn btn-default">${{watch.price | number:2}}</a>
                 <a href="/watch/{{watch.id}}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy</a>
               </div>
             </p>
