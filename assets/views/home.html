@@ -26,16 +26,16 @@
     </div> --> <!-- TRYING A NEW CAROUSEL FROM BOOTSTRAP, NOT WORKING PERFECTLY -->
     <div>
       <div ng-controller="CarouselCtrl">
-        <div style="height:305px">
-          <carousel interval="myInterval" disable-animation="true">
+          <carousel interval="myInterval" disable-animation>
             <slide ng-repeat="slide in slides" active="slide.active">
-              <img ng-src="{{slide.image}}" style="margin:auto;">
-              <div class="carousel-caption">
-                <h1 class="carousel-text">{{slide.text}}</h1>
+              <div style="height: 428px;overflow: hidden;">
+                <img ng-src="{{slide.image}}" style="margin:auto;width:100%" >
+                <div class="carousel-caption">
+                  <h1 class="carousel-text">{{slide.text}}</h1>
+                </div>
               </div>
             </slide>
           </carousel>
-        </div>
       </div>
     </div>
     </div>
