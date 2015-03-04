@@ -20,12 +20,14 @@ watchApp.directive("fileread", [function () {
 
 watchApp.controller('WatchNewCtrl',['$scope','$http','$location','UserService',function($scope,$http,$location,UserService){
 
+    $scope.loading = false;
     $scope.UserService = UserService;
     $scope.$watchCollection('UserService',function(){
         $scope.currentUser=UserService.currentUser;
     });
 
     $scope.createWatch = function(){
+        $scope.loading = true;
         $scope.alert=false;
 
         var watchData = {
@@ -50,6 +52,7 @@ watchApp.controller('WatchNewCtrl',['$scope','$http','$location','UserService',f
                 timer: 2500
               });
             console.log(data);
+            $scope.loading = false;
             $location.path('/watch/'+data.id);
         }).error(function(err){
             console.log(err);
