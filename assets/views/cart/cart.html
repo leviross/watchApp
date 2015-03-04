@@ -66,8 +66,8 @@
           <!-- <td>
             <input type="text" name="" value="1" class="input-qty form-control text-center" />
           </td> -->
-          <td class="price">$ {{watch.price}}</td>
-          <td>$ {{watch.price}}</td>
+          <td class="price">$ {{watch.price | number:2}}</td>
+          <td>$ {{watch.price | number:2}}</td>
           <td class="text-center">
             <a ng-click="removeItem($index)" href="#" class="remove_cart" rel="2">
               <i class="fa fa-trash-o"></i>
@@ -77,7 +77,7 @@
 
         <tr>
           <td colspan="6" align="right">Total</td>
-          <td class="total" colspan="2"><b>${{total()}}</b>
+          <td class="total" colspan="2"><b>${{total() | number:2}}</b>
           </td>
         </tr>
       </tbody>
