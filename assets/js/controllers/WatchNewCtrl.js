@@ -41,7 +41,7 @@ watchApp.controller('WatchNewCtrl',['$scope','$http','$location','UserService',f
             image_file3:$scope.image_file3
         };
 
-        console.log(watchData);
+        //console.log(watchData);
 
         $http.post('/watch/new',watchData).success(function(data){
             //$scope.alert="Your post has been created.";
