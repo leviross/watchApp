@@ -9,16 +9,22 @@ watchApp.controller('HomeCtrl',['$scope','$http','filterFilter','UserService',fu
         $scope.currentUser=UserService.currentUser;
     });
 
-    $scope.showBrand = function(brand){
-        return $scope.watches = filterFilter($scope.watches, {brand:brand});
-    }
 
     $scope.clearBrand = function(){
         $http(req).success(function(data){
-        //console.log(data);
-        $scope.watches = data;
-    });
+            //console.log(data);
+            $scope.watches = data;
+        });
     }
+
+    $scope.showBrand = function(brand){
+        $http(req).success(function(data){
+            //console.log(data);
+            $scope.watches = data;
+            return $scope.watches = filterFilter($scope.watches, {brand:brand});
+        });
+    }
+
 
     var req = {
         url:'/api/watch',
