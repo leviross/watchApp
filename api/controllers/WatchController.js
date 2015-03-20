@@ -21,6 +21,7 @@
         var imageFile2 = req.body.image_file2;
         var imageFile3 = req.body.image_file3;
 
+        //Finally had to nest 3 Cloudinary calls within each other in order to pass publicID variables to imageArray
         cloudinary.uploader.upload(imageFile1, function(result){
             var publicID1 = result.public_id;
             console.log(result);
@@ -33,7 +34,7 @@
                     var publicID3 = result.public_id;
                     console.log(result);
 
-
+                    //passing variables to an array to save array to DB
                     var imageArray = [publicID1,publicID2,publicID3];
 
 
@@ -48,7 +49,7 @@
                       owner: req.session.user.id || 0
                     }
 
-
+                    //passing watchData object to DB in create function
                     Watch.create(watchData).exec(function(err,watch){
                         if(err) res.send(400,err);
                           Watch.publishCreate(watch);
