@@ -25,6 +25,9 @@ module.exports = {
       type:'string',
       required:true
     },
+    cart:{
+      type:'array'
+    },
 
     //// associations go here
 

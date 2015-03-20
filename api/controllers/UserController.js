@@ -6,6 +6,10 @@
  */
 
 module.exports = {
-	
+
+    patch:function(req,res){
+
+    }
+
 };
 

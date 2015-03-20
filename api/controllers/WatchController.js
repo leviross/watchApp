@@ -8,11 +8,9 @@
  var cloudinary = require('cloudinary');
 
  cloudinary.config({
-  cloud_name: 'justwyoming-com',
-  api_key: '272964572993666',
-  api_secret: 'KNY4tsLlGAmcsfUnF4IiBdkxMdw'
-  //enhance_image_tag: true  FROM RAILS APP
-  //static_image_support: true
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET
 });
 
  module.exports = {
@@ -67,9 +65,7 @@
 
 
     }
-    // cart:function(req,res){
-    //   res.view('watch/cart');
-    // }
+
 
 };
 

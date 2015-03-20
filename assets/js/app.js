@@ -1,4 +1,4 @@
-var watchApp = angular.module('WatchApp',['ui.bootstrap','ngRoute']);
+var watchApp = angular.module('WatchApp',['ui.bootstrap','ngRoute','ngCart']);
 
 watchApp.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
 

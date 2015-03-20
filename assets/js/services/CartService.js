@@ -1,11 +1,19 @@
-watchApp.factory('CartService',['UserService',function(UserService){
+watchApp.factory('CartService',['$http','UserService',function($http,UserService){
 
-
-    // UserService.check(function(err,data){
-    //     console.log('check',err,data);
-    // });
 
     var userCart=[];
+
+    var getUserCart = function(){
+        var userWatch = {cart:[array]}
+        $http.get('/api/user',userWatch)
+        .sucess(function(data){
+            alert('got users cart array');
+
+        })
+        .error(function(err){
+            alert(err);
+        })
+    }
 
     var addToCart = function(newObj){
         userCart.push(newObj);
@@ -24,7 +32,8 @@ watchApp.factory('CartService',['UserService',function(UserService){
     return{
         addToCart: addToCart,
         getCart: getCart,
-        removeFromCart: removeFromCart
+        removeFromCart: removeFromCart,
+        getUserCart: getUserCart
     };
 
 

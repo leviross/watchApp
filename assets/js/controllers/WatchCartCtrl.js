@@ -9,10 +9,14 @@ watchApp.controller('WatchCartCtrl',['$scope','$routeParams','$location','CartSe
 
     //TRYIN TO FIGURE OUT A WAY TO SAVE THE CART ON PAGE RELOAD, OR SAVE CART TO USER ACCOUNT
 
+    if($scope.currentUser){
+        $scope.watches = CartService.getUserCart();
+    }else{
+        $scope.watches = CartService.getCart();
+    }
 
-    $scope.watches = CartService.getCart();
 
-    $scope.total = function() {
+    $scope.total = function(){
         var total = 0;
         angular.forEach($scope.watches, function(item){
             total += item.price;

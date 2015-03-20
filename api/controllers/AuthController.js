@@ -35,7 +35,7 @@ module.exports = {
     },
     logout:function(req,res){
         delete req.session.user;
-        res.send({result:true});
+        res.send({result:true});q
     },
     check:function(req,res){
         res.send({
