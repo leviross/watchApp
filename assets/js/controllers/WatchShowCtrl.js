@@ -1,4 +1,4 @@
-watchApp.controller('WatchShowCtrl',['$scope','$http','$routeParams','$location','$modal','CartService','UserService','ngCart',function($scope,$http,$routeParams,$location,$modal,CartService,UserService,ngCart){
+watchApp.controller('WatchShowCtrl',['$scope','$http','$routeParams','$location','$modal','CartService','UserService',function($scope,$http,$routeParams,$location,$modal,CartService,UserService){
 
     $scope.UserService = UserService;
     $scope.$watchCollection('UserService',function(){
