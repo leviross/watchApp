@@ -1,4 +1,4 @@
-watchApp.controller('WatchCartCtrl',['$scope','$routeParams','$location','CartService','UserService',function($scope,$routeParams,$location,CartService,UserService){
+watchApp.controller('WatchCartCtrl',['$scope','CartService','UserService',function($scope,CartService,UserService){
 
 
     $scope.UserService = UserService;
@@ -7,22 +7,39 @@ watchApp.controller('WatchCartCtrl',['$scope','$routeParams','$location','CartSe
         //console.log("Watching UserService");
     });
 
-    //TRYIN TO FIGURE OUT A WAY TO SAVE THE CART ON PAGE RELOAD, OR SAVE CART TO USER ACCOUNT
+    // if(UserService.currentUser){
+    //     $scope.CartService = CartService;
+    //     $scope.$watchCollection('CartService',function(){
+    //         $scope.watches = CartService.getUserCart();
+    //         console.log("Watching CartService");
+    //     });
+    // }else{
+    //     $scope.watches = CartService.getCart();
+    // }
 
-    if($scope.currentUser){
-        $scope.watches = CartService.getUserCart();
+
+
+    //TRYIN TO FIGURE OUT A WAY TO SAVE THE CART ON PAGE RELOAD, OR SAVE CART TO USER ACCOUNT
+    //$scope.watches = [];
+    if(UserService.currentUser){
+        // alert('user logged in!!!!!:)')
+        // var array = CartService.getUserCart();
+        // $scope.watches = array;
+        // console.log("Scope.watches = CartService.getUserCart. Why isnt it pulling it up though?");
+        $scope.watches = [];
+        $scope.watches.push(CartService.getUserCart());
     }else{
         $scope.watches = CartService.getCart();
     }
 
 
-    $scope.total = function(){
-        var total = 0;
-        angular.forEach($scope.watches, function(item){
-            total += item.price;
-        });
-        return total;
-    }
+    // $scope.total = function(){
+    //     var total = 0;
+    //     angular.forEach($scope.watches, function(item){
+    //         total += item.price;
+    //     });
+    //     return total;
+    // }
 
     $scope.removeItem = function(idx){
         swal({

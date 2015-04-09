@@ -25,7 +25,7 @@ module.exports = {
       type:'string',
       required:true
     },
-    cart:{
+    userCart:{
       type:'array'
     },
 
@@ -43,17 +43,13 @@ module.exports = {
     }
   },
 
-  //req.body  {email:"...",password:"qwerty"}
-  //User.create(req.body)
-  //Model.beforeCreate(value,function(err,data){ ... })
-  //...next line of code
-  beforeCreate:function(values,cb){
-    bcrypt.hash(values.password,10,function(err,hash){
+    beforeCreate:function(values,cb){
+      bcrypt.hash(values.password,10,function(err,hash){
         if(err) return cb(err);
         values.password=hash;
         cb();
-    })
-  }
+      })
+    }
 
 };
 

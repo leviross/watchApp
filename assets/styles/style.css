@@ -92,6 +92,9 @@ header .logo a:hover{
 ul.bxslider {
 	list-style: none;
 }
+table.inlineTable{
+	display: inline-block;
+}
 .bx-wrapper .bx-viewport {
 	top: 0;
 	left: 0;

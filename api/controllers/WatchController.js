@@ -4,16 +4,16 @@
  * @description :: Server-side logic for managing watches
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
- // Cloudinary initialization and configuration
- var cloudinary = require('cloudinary');
+// Cloudinary initialization and configuration
+var cloudinary = require('cloudinary');
 
- cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_NAME,
-  api_key: process.env.CLOUDINARY_KEY,
-  api_secret: process.env.CLOUDINARY_SECRET
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_KEY,
+    api_secret: process.env.CLOUDINARY_SECRET
 });
 
- module.exports = {
+module.exports = {
 
     create:function(req,res){
 
@@ -51,10 +51,13 @@
 
                     //passing watchData object to DB in create function
                     Watch.create(watchData).exec(function(err,watch){
-                        if(err) res.send(400,err);
-                          Watch.publishCreate(watch);
-                          console.log(watch);
-                          res.send(watch);
+                        if(err){
+                            res.send(400,err);
+                        }else{
+                            Watch.publishCreate(watch);
+                            console.log(watch);
+                            res.send(watch);
+                        }
 
                     });
 
@@ -64,9 +67,7 @@
 
         });
 
-
     }
-
 
 };
 

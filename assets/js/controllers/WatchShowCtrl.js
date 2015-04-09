@@ -38,15 +38,9 @@ watchApp.controller('WatchShowCtrl',['$scope','$http','$routeParams','$location'
         //   });
 
         if($scope.currentUser){
-            var userWatchArr ={cart:currObj}
-            $http.patch('/api/user', userWatchArr)
-            .success(function(data){
-                alert('watch added to users cart array!');
-                $location.path('/cart');
-            })
-            .error(function(err){
-                alert(err);
-            })
+            //alert('user is logged in and adding to cart');
+            CartService.addUserCart(currObj);
+            $location.path('/cart');
         }else{
             CartService.addToCart(currObj);
             $location.path('/cart');

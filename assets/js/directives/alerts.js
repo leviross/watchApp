@@ -1,6 +1,3 @@
-
-// <alerts></alerts>
-
 watchApp.directive('alerts',function(){
     return {
         restrict:'E',

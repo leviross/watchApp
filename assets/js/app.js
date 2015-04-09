@@ -31,6 +31,10 @@ watchApp.config(['$routeProvider','$locationProvider',function($routeProvider,$l
         templateUrl:'/views/about.html',
         controller:'StaticCtrl'
     })
+    .when('/test',{
+        templateUrl: '/views/test.html',
+        controller: 'TestCtrl'
+    });
 
 
 }]);
