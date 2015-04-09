@@ -1,15 +1,8 @@
 watchApp.controller('TestCtrl', ['$scope', function($scope){
 
-    $scope.MyFloat = "left";
-    $scope.levi = {name: "Levi Ross"};
 
     $scope.swapSide = function(){
-        alert("this ");
-        if($scope.MyFloat == "left"){
-            $scope.MyFloat == "right";
-        }else{
-            $scope.MyFloat == "left";
-        }
+        $scope.state = !$scope.state;
     }
 
     $scope.rows = [
@@ -54,13 +47,16 @@ watchApp.controller('TestCtrl', ['$scope', function($scope){
 
 }])
 
+//WAS REALLY TRYING TO HAVE A TEMPLATE PRODUCE A <td> TAG FOR EVERY COLOR AND THEN CHANGE THE CSS FLOAT PROPERTY BASED ON WHAT COLUMN THE DIV WAS IN AND TOGGLE BACK AND FORTH AND KEEP SEQUENCE...
+
 .directive('MyFloat', function(){
     return {
         restrict: 'E',
         scope: {
-            customerInfo: '=info'
-        }
-
+            state: '=?'
+        },
+        replace: true,
+        template: '<td>' + '<div ng-repeat="color in row.sequence" style="width:100px; height:50px; background-color:{{color}}; float:{{state}};" ng-click="swapSide()"></div>' + '</td>'
     };
 
 });

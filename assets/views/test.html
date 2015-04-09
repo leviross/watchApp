@@ -4,6 +4,7 @@
     <thead>
 
       <tr>
+        <!-- WAS EVENTUALLY GOING TO UPDATE THE COUNT BASED ON HOW MANY DIVS WERE IN EACH COLUMN-->
         <th><h1>Column 'A' - Count:{{}}</h1></th>
         <th><h1>Column 'B' - Count:{{}}</h1></th>
       </tr>
@@ -13,18 +14,13 @@
     <tbody>
 
       <tr ng-repeat="row in rows">
-        <td><div ng-show="columnA" ng-repeat="color in row.sequence" ng-style="{float: MyFloat}" style="width:100px; height:50px; background-color:{{color}};" ng-click="swapSide()"></div></td>
+        <!-- THIS WAS ORIGINALLY THE ROUTE I TOOK BEFORE CUSTOM DIRECTIVE, I WAS ON TO SOMETHING HERE,
+        BUT THOUGHT THAT DIRECTIVE MIGHT BE THE RIGHT WAY-->
+        <td><div ng-repeat="color in row.sequence" ng-style="{float: MyFloat}" style="width:100px; height:50px; background-color:{{color}};" ng-click="swapSide()"></div></td>
       </tr>
-      <div><my-float info="levi">{{customerInfo.name}}</my-float></div>
-      <!-- <tr>
-        <td><div ng-repeat="color in colors[1].sequence" style="float: left; width:100px; height:50px; background-color:{{color}};"></div></td>
-      </tr>
-      <tr>
-        <td><div ng-repeat="color in colors[2].sequence" style="float: left; width:100px; height:50px; background-color:{{color}};"></div></td>
-      </tr>
-      <tr>
-        <td><div ng-repeat="color in colors[3].sequence" style="float: left; width:100px; height:50px; background-color:{{color}};"></div></td>
-      </tr> -->
+      <!-- THIS WAS GOING TO BE MY CUSTOM DIRECTIVE BELOW -->
+
+      <my-float></my-float>
 
     </tbody>
 
