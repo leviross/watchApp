@@ -1,48 +1,39 @@
-watchApp.controller('TestCtrl', ['$scope', function($scope){
+watchApp.controller('TestCtrl', ['$scope','$http', function($scope,$http){
 
 
     $scope.swapSide = function(){
         $scope.state = !$scope.state;
     }
 
-    $scope.rows = [
-  {
-    "sequence": ["red", "green", "yellow", "blue"],
-    "states": {
-      "red": "A",
-      "green": "A",
-      "yellow": "A",
-      "blue": "A"
+    $scope.countA = 0;
+    $scope.countB = 0;
+
+    $scope.startGame = function(){
+        alert('worked');
+
+        $http.get('/api/color').success(function(data){
+            console.log("JSON DATA: ", data);
+            $scope.colors = data;
+            if(data.length > 0){
+                for(var i = 0; i < data.length; i++){
+                    //console.log(i.states);
+                    var column = data[i].states;
+                    for(var key in column){
+                        if(column[key] == "A"){
+                            $scope.countA++;
+                        }
+                        if(column[key] == "B"){
+                            $scope.countB++;
+                        }
+                    }
+                }
+            }
+
+        });
+
     }
-  },
-  {
-    "sequence": ["green", "yellow", "red", "blue"],
-    "states": {
-      "red": "B",
-      "green": "B",
-      "yellow": "A",
-      "blue": "A"
-    }
-  },
-  {
-    "sequence": ["blue", "yellow", "red", "green"],
-    "states": {
-      "red": "A",
-      "green": "A",
-      "yellow": "B",
-      "blue": "B"
-    }
-  },
-  {
-    "sequence": ["yellow", "blue", "green", "red"],
-    "states": {
-      "red": "A",
-      "green": "B",
-      "yellow": "A",
-      "blue": "B"
-    }
-  }
-]
+
+
 
 
 }])

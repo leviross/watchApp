@@ -43,7 +43,7 @@ watchApp.controller('WatchNewCtrl',['$scope','$http','$location','UserService',f
 
         //console.log(watchData);
 
-        $http.post('/watch/new',watchData).success(function(data){
+        $http.post('/api/watch/new',watchData).success(function(data){
             //$scope.alert="Your post has been created.";
             swal({
                 title: "Your watch has been added!",

@@ -38,7 +38,7 @@ module.exports.routes = {
   'delete /api/auth': "AuthController.logout",
   'get /api/auth': "AuthController.check",
   //route to upload pics from server side to cloudinary
-  'post /watch/new': "WatchController.create",
+  'post /api/watch/new': "WatchController.create",
   //'get /watch/cart': "WatchController.cart",
 
 

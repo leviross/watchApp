@@ -20,6 +20,8 @@ module.exports = {
             image_url: req.body.image_url[0],
             id: req.body.id
         }
+
+        // TODO: USE THIS TO SAVE USERS ID req.session.user.id
         // User.update({id:userID},{userCart:watchID}).exec(function(err,updated){
         //     if(err) return res.send(400, err);
         //     console.log(updated);
@@ -27,7 +29,7 @@ module.exports = {
         // });
         User.findOne(userID).exec(function(err,user){
 
-            user.userCart.push(watch);
+            user.userCart.push(req.body.id);
             user.save(function(err,user){
                 if(err) return console.log(err);
                 //console.log('THIS IS THE USER FOUND',user);
